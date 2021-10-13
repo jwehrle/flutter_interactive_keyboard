@@ -132,7 +132,7 @@ public class SwiftFlutterInteractiveKeyboardPlugin: NSObject, FlutterPlugin {
         let isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
         if(isKeyboardShowing) {
             if let userInfo = notification.userInfo {
-                let keyboardFrame = (userInfo[UIResponder.UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+                let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
                 keyboardOpen = true
                 keyboardRect = keyboardFrame!
             }
